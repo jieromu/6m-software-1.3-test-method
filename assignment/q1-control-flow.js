@@ -8,8 +8,25 @@
 */
 
 const env = "DEV"; // Toggle between these possible values "DEV" | "STAGE" | "PROD"
-const databaseCredential = "devuser:password";
+
+// Proposong if we should change databaseCredential from const to let
+// else due to the assignment of value to a const, 
+// it will throw TypeError: Assignment to constant variable.
+let databaseCredential = "devuser:password";
 
 // Task: Add code here
+// This implementation is not case sensitive
+switch(env.toUpperCase()){
+    default:
+        databaseCredential = null;
+        break;
+    case "DEV":
+        break;
+    case "STAGE":
+        databaseCredential = "stageuser:password";
+        break;
+    case "PROD":
+        databaseCredential = "produser:password";
+}
 
-console.log(`Database credential for environment ${env} is ${databaseCredential}`);
+console.log(`Database credential for environment ${env.toUpperCase()} is ${databaseCredential}`);
