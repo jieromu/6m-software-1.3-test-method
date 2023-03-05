@@ -9,7 +9,7 @@
 
 const env = "DEV"; // Toggle between these possible values "DEV" | "STAGE" | "PROD"
 
-// Proposong if we should change databaseCredential from const to let
+// Proposing if we should change databaseCredential from const to let
 // else due to the assignment of value to a const, 
 // it will throw TypeError: Assignment to constant variable.
 let databaseCredential = "devuser:password";
